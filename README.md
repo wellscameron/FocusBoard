@@ -1,6 +1,6 @@
-# Your Project Name
+# FocusBoard
 
-Brief description of what your app does.
+FocusBoard is a project management tool that helps you stay focused on your tasks and projects.
 
 ## Setup
 
