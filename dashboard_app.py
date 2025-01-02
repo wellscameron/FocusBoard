@@ -236,8 +236,20 @@ def show_manage_projects_page(dashboard):
                             st.session_state.confirm_delete[project] = False
                             st.rerun()
 
+def get_img_as_base64(file_path):
+    with open(file_path, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
 def main():
-    st.set_page_config(page_title="FocusBoard", layout="wide")
+    icon_path = "focus.png"  # Icon file in project directory
+    icon_base64 = get_img_as_base64(icon_path)
+    
+    st.set_page_config(
+        page_title="FocusBoard",
+        page_icon=f"data:image/png;base64,{icon_base64}",
+        layout="wide"
+    )
     init_session_state()
     
     # Initialize login state if not exists
